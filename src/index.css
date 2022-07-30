@@ -1,0 +1,37 @@
+*,
+*:before,
+*:after { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    min-height: 100vh;
+    display: grid;
+    grid: [row1-start] "header header" max-content [row1-end]
+          [row2-start] "aside main" 1fr [row2-end]
+          / max-content 1fr;
+}
+
+header {
+    grid-area: header;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    grid-area: main;
+    border: 1px solid black;
+}
