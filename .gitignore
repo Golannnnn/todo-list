@@ -2,3 +2,4 @@ plan.txt
 todo-list.code-workspace
 draft.js
 .DS_Store
+node_modules/
