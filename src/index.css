@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+ul li {
+    list-style-type: none;
+}
+
 #grid-container {
     min-height: 100vh;
     display: grid;
@@ -31,7 +35,34 @@ aside {
     flex-direction: column;
 }
 
+aside #projects-container {
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     grid-area: main;
     border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main .title-container {
+    display: flex;
+    flex-direction: row;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+}
+
+main .todo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main ul li {
+    display: flex;
 }
