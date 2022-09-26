@@ -1,68 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="/src/index.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do list</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="grid-container">
-        <header>Header</header>
-        <aside>
-            <ul>
-                <li id="overview">Overview</li>
-                <li id="today">Today</li>
-                <li id="upcoming">Upcoming</li>
-                <ul id="projects-container">
-                    <span>Projects</span>
-                    <button class="add-project">Add project</button>
-                    <li class="projects"></li>
-                </ul>
-            </ul>
-        </aside>
-        <main>
-            <section class="title-container">
-                <h1>Overview</h1>
-                <button class="open-form">Add todo</button>
-            </section>
-
-            <form action="">
-
-                <div class="form-row">
-                    <input type="text" name="title" id="title" placeholder="Title...">
-                    <input type="text" name="project" id="project" placeholder="Project...">
-                    <label for="priority">Priority:</label>
-                    <select name="priority" id="priority">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                    </select>
-                    <input type="date" name="date" id="due-date">
-                </div>
-
-                <div class="form-row">
-                    <textarea name="description" id="description" cols="20" rows="5" placeholder="Description..."></textarea>
-                </div>
-
-                <div class="form-row">
-                    <input type="submit" name="submit" value="Add">
-                    <input type="button" name="cancel" id="cancel" value="Cancel">
-                </div>
-               
+      <aside>
+        <ul id="sidebar-container">
+          <h1 id="sidebar-title">To-do list</h1>
+          <li id="overview" class="active-module">
+            <img src="/src/images/home.svg" alt="overview" />Overview
+          </li>
+          <li id="today">
+            <img src="/src/images/calendar.svg" alt="today" />Today
+          </li>
+          <li id="upcoming">
+            <img src="/src/images/bookmark.svg" alt="upcoming" />Upcoming
+          </li>
+          <ul id="projects-container">
+            <button id="open-project-form">Add project</button>
+            <form id="project-form">
+              <div class="input-wrapper project-form-row">
+                <input
+                  type="text"
+                  name="project"
+                  id="project-name"
+                  placeholder="Project"
+                />
+                <div class="error"></div>
+              </div>
+              <div class="project-form-row" id="second-row">
+                <input
+                  type="submit"
+                  name="submit"
+                  id="add-project-name"
+                  value="Add"
+                />
+                <input
+                  type="button"
+                  name="cancel"
+                  id="cancel-project-form"
+                  value="Cancel"
+                />
+              </div>
             </form>
+            <li id="dynamic-projects"></li>
+          </ul>
+        </ul>
+      </aside>
+      <main>
+        <section id="title-container">
+          <h1 id="main-title">Overview</h1>
+        </section>
 
-            <ul class="todo-container">
-                <li>
-                    <span>Title</span>
-                    <span>Project</span>
-                    <span>Priority</span>
-                    <span>Due date</span>
-                </li>
-            </ul>
-        </main>
+        <ul id="todo-container">
+          <li>
+            <p>Title</p>
+            <p>Project</p>
+            <p>Priority</p>
+            <p>Due date</p>
+          </li>
+          <form id="todo-form">
+            <div class="todo-form-row">
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  class="unchanged"
+                  placeholder="Title..."
+                />
+                <div class="error"></div>
+              </div>
+
+              <div class="input-wrapper project-wrapper">
+                <input
+                  type="text"
+                  name="project"
+                  id="project"
+                  class="unchanged"
+                  placeholder="Project..."
+                />
+                <div class="error"></div>
+              </div>
+
+              <div class="input-wrapper">
+                <input
+                  type="checkbox"
+                  name="priority"
+                  value="high"
+                  id="priority"
+                  class="unchanged"
+                />
+                <div class="error"></div>
+              </div>
+
+              <div class="input-wrapper">
+                <input
+                  type="date"
+                  name="date"
+                  id="due-date"
+                  class="unchanged"
+                />
+                <div class="error"></div>
+              </div>
+
+              <input
+                type="submit"
+                name="submit"
+                value="Add"
+                id="add-todo-form"
+                class="unchanged"
+              />
+            </div>
+          </form>
+        </ul>
+      </main>
     </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
